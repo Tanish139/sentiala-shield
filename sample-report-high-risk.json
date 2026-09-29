@@ -1,0 +1,170 @@
+{
+  "schema": "sentiala.report/1",
+  "product": "Sentiala Shield",
+  "target": "http://malicious.test/download",
+  "target_kind": "url",
+  "generated_at": "2026-09-28T04:49:21+00:00",
+  "risk": {
+    "score": 68,
+    "level": "HIGH RISK",
+    "confidence": 97,
+    "recommended_action": "Strong evidence of malicious activity. Do not enter credentials or download files; close the site and reach the service through its official domain instead."
+  },
+  "public_intelligence": "2 relevant intelligence finding(s) found",
+  "evidence": {
+    "VERIFIED FACT": [
+      {
+        "check_id": "intel_urlhaus_listing",
+        "title": "Host listed on URLhaus malware feed",
+        "detail": "The host 'malicious.test' is listed in the URLhaus malware intelligence feed. Reference: https://urlhaus.abuse.ch/host/malicious.test/",
+        "evidence_class": "VERIFIED FACT",
+        "points": 45,
+        "source": {
+          "name": "URLhaus (abuse.ch)",
+          "tier": 2,
+          "tier_label": "Tier 2 (trusted)",
+          "url": "https://urlhaus.abuse.ch/",
+          "retrieved_at": "2026-09-28T04:49:21+00:00"
+        }
+      },
+      {
+        "check_id": "rdap_young_domain",
+        "title": "Domain registered only 13 days ago",
+        "detail": "'malicious.test' was registered on 2026-09-14. Phishing infrastructure is frequently brand new; legitimate established sites are rarely this young.",
+        "evidence_class": "VERIFIED FACT",
+        "points": 15,
+        "source": {
+          "name": "RDAP (registry data)",
+          "tier": 1,
+          "tier_label": "Tier 1 (highest confidence)",
+          "url": "https://rdap.org/",
+          "retrieved_at": "2026-09-28T04:49:21+00:00"
+        }
+      }
+    ],
+    "OBSERVATION": [
+      {
+        "check_id": "no_https",
+        "title": "No transport encryption (not HTTPS)",
+        "detail": "Credentials or data submitted to this target would travel in cleartext.",
+        "evidence_class": "OBSERVATION",
+        "points": 8,
+        "source": {
+          "name": "Sentiala local deterministic rules",
+          "tier": 1,
+          "tier_label": "Tier 1 (highest confidence)",
+          "url": "local://deterministic-url-analyzer",
+          "retrieved_at": ""
+        }
+      }
+    ],
+    "AI INFERENCE": [],
+    "UNVERIFIED CLAIM": []
+  },
+  "contributions": [
+    {
+      "check_id": "intel_urlhaus_listing",
+      "title": "Host listed on URLhaus malware feed",
+      "points": 45,
+      "evidence_class": "VERIFIED FACT",
+      "source": "URLhaus (abuse.ch)"
+    },
+    {
+      "check_id": "rdap_young_domain",
+      "title": "Domain registered only 13 days ago",
+      "points": 15,
+      "evidence_class": "VERIFIED FACT",
+      "source": "RDAP (registry data)"
+    },
+    {
+      "check_id": "no_https",
+      "title": "No transport encryption (not HTTPS)",
+      "points": 8,
+      "evidence_class": "OBSERVATION",
+      "source": "Sentiala local deterministic rules"
+    }
+  ],
+  "possible_false_positives": [
+    "No mitigating factors observed for this target."
+  ],
+  "ai_explanation": "Sentiala assessed 'http://malicious.test/download' as HIGH RISK (risk score 68/100) by correlating the following evidence: • Host listed on URLhaus malware feed (+45 points, VERIFIED FACT, source: URLhaus (abuse.ch)). • Domain registered only 13 days ago (+15 points, VERIFIED FACT, source: RDAP (registry data)). • No transport encryption (not HTTPS) (+8 points, OBSERVATION, source: Sentiala local deterministic rules). Of these, 2 finding(s) are verified facts confirmed by external sources; the remainder are deterministic observations from URL structure and infrastructure analysis. The high verdict reflects the combination of multiple independent indicators rather than any single signal. This explanation is a rule-based correlation of the evidence above, produced by Sentiala's local deterministic correlator.",
+  "live_intelligence": {
+    "offline_mode": false,
+    "providers": [
+      {
+        "provider": "URLhaus (abuse.ch)",
+        "available": true,
+        "note": "host is listed",
+        "findings": [
+          {
+            "check_id": "intel_urlhaus_listing",
+            "title": "Host listed on URLhaus malware feed",
+            "detail": "The host 'malicious.test' is listed in the URLhaus malware intelligence feed. Reference: https://urlhaus.abuse.ch/host/malicious.test/",
+            "evidence_class": "VERIFIED FACT",
+            "points": 45,
+            "source": {
+              "name": "URLhaus (abuse.ch)",
+              "tier": 2,
+              "tier_label": "Tier 2 (trusted)",
+              "url": "https://urlhaus.abuse.ch/",
+              "retrieved_at": "2026-09-28T04:49:21+00:00"
+            }
+          }
+        ]
+      },
+      {
+        "provider": "RDAP (registry data)",
+        "available": true,
+        "note": "",
+        "findings": [
+          {
+            "check_id": "rdap_young_domain",
+            "title": "Domain registered only 13 days ago",
+            "detail": "'malicious.test' was registered on 2026-09-14. Phishing infrastructure is frequently brand new; legitimate established sites are rarely this young.",
+            "evidence_class": "VERIFIED FACT",
+            "points": 15,
+            "source": {
+              "name": "RDAP (registry data)",
+              "tier": 1,
+              "tier_label": "Tier 1 (highest confidence)",
+              "url": "https://rdap.org/",
+              "retrieved_at": "2026-09-28T04:49:21+00:00"
+            }
+          }
+        ]
+      },
+      {
+        "provider": "Cloudflare DNS-over-HTTPS",
+        "available": true,
+        "note": "resolves (1 A record(s))",
+        "findings": []
+      }
+    ],
+    "degradations": []
+  },
+  "notes": [],
+  "sources": [
+    {
+      "name": "Sentiala local deterministic rules",
+      "tier": 1,
+      "tier_label": "Tier 1 (highest confidence)",
+      "url": "local://deterministic-url-analyzer",
+      "retrieved_at": ""
+    },
+    {
+      "name": "URLhaus (abuse.ch)",
+      "tier": 2,
+      "tier_label": "Tier 2 (trusted)",
+      "url": "https://urlhaus.abuse.ch/",
+      "retrieved_at": "2026-09-28T04:49:21+00:00"
+    },
+    {
+      "name": "RDAP (registry data)",
+      "tier": 1,
+      "tier_label": "Tier 1 (highest confidence)",
+      "url": "https://rdap.org/",
+      "retrieved_at": "2026-09-28T04:49:21+00:00"
+    }
+  ],
+  "disclaimer": "Sentiala provides evidence-based security assistance. It does not guarantee detection of every threat, and a SAFE verdict means 'no significant evidence found', not 'verified safe'."
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "sentiala.report/1",
+  "product": "Sentiala Shield",
+  "target": "https://old-faithful.test/",
+  "target_kind": "url",
+  "generated_at": "2026-09-28T04:49:21+00:00",
+  "risk": {
+    "score": 0,
+    "level": "SAFE",
+    "confidence": 90,
+    "recommended_action": "No significant evidence of danger was found. Normal browsing caution still applies."
+  },
+  "public_intelligence": "NO RELEVANT PUBLIC INTELLIGENCE FOUND",
+  "evidence": {
+    "VERIFIED FACT": [
+      {
+        "check_id": "rdap_established_domain",
+        "title": "Domain registered ~31 years ago",
+        "detail": "'old-faithful.test' has existed since 1995-08-14. Long registration history lowers (but does not eliminate) phishing likelihood — compromised sites also occur.",
+        "evidence_class": "VERIFIED FACT",
+        "points": 0,
+        "source": {
+          "name": "RDAP (registry data)",
+          "tier": 1,
+          "tier_label": "Tier 1 (highest confidence)",
+          "url": "https://rdap.org/",
+          "retrieved_at": "2026-09-28T04:49:21+00:00"
+        }
+      }
+    ],
+    "OBSERVATION": [
+      {
+        "check_id": "https",
+        "title": "Connection encrypted (HTTPS)",
+        "detail": "The target uses HTTPS. Note: HTTPS proves transport encryption only — phishing sites use valid HTTPS too.",
+        "evidence_class": "OBSERVATION",
+        "points": 0,
+        "source": {
+          "name": "Sentiala local deterministic rules",
+          "tier": 1,
+          "tier_label": "Tier 1 (highest confidence)",
+          "url": "local://deterministic-url-analyzer",
+          "retrieved_at": ""
+        }
+      }
+    ],
+    "AI INFERENCE": [],
+    "UNVERIFIED CLAIM": []
+  },
+  "contributions": [],
+  "possible_false_positives": [
+    "Connection encrypted (HTTPS) — The target uses HTTPS. Note: HTTPS proves transport encryption only — phishing sites use valid HTTPS too.",
+    "Domain registered ~31 years ago — 'old-faithful.test' has existed since 1995-08-14. Long registration history lowers (but does not eliminate) phishing likelihood — compromised sites also occur."
+  ],
+  "ai_explanation": "Sentiala found no contributing risk indicators for 'https://old-faithful.test/'. External intelligence sources were consulted and returned no matches for this target. Absence of evidence is not proof of safety — this verdict means 'no significant evidence found', not 'verified safe'.",
+  "live_intelligence": {
+    "offline_mode": false,
+    "providers": [
+      {
+        "provider": "URLhaus (abuse.ch)",
+        "available": true,
+        "note": "host not present in URLhaus malware feed",
+        "findings": []
+      },
+      {
+        "provider": "RDAP (registry data)",
+        "available": true,
+        "note": "",
+        "findings": [
+          {
+            "check_id": "rdap_established_domain",
+            "title": "Domain registered ~31 years ago",
+            "detail": "'old-faithful.test' has existed since 1995-08-14. Long registration history lowers (but does not eliminate) phishing likelihood — compromised sites also occur.",
+            "evidence_class": "VERIFIED FACT",
+            "points": 0,
+            "source": {
+              "name": "RDAP (registry data)",
+              "tier": 1,
+              "tier_label": "Tier 1 (highest confidence)",
+              "url": "https://rdap.org/",
+              "retrieved_at": "2026-09-28T04:49:21+00:00"
+            }
+          }
+        ]
+      },
+      {
+        "provider": "Cloudflare DNS-over-HTTPS",
+        "available": true,
+        "note": "resolves (1 A record(s))",
+        "findings": []
+      }
+    ],
+    "degradations": []
+  },
+  "notes": [],
+  "sources": [
+    {
+      "name": "Sentiala local deterministic rules",
+      "tier": 1,
+      "tier_label": "Tier 1 (highest confidence)",
+      "url": "local://deterministic-url-analyzer",
+      "retrieved_at": ""
+    },
+    {
+      "name": "RDAP (registry data)",
+      "tier": 1,
+      "tier_label": "Tier 1 (highest confidence)",
+      "url": "https://rdap.org/",
+      "retrieved_at": "2026-09-28T04:49:21+00:00"
+    }
+  ],
+  "disclaimer": "Sentiala provides evidence-based security assistance. It does not guarantee detection of every threat, and a SAFE verdict means 'no significant evidence found', not 'verified safe'."
+}
